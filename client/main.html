@@ -1,0 +1,37 @@
+<head>
+  <title>Rentomojo Assignment</title>
+</head>
+
+<body>
+  <div class="container">
+        {{>loginButtons}}
+        <h1>Welcome to Comments system Assignment</h1>
+        
+        {{>addCommentForm}}
+        {{>CommentList}}
+    </div>
+</body>
+
+<template name="CommentList">
+    <h3>Recent Comments :</h3>
+    <ol>
+    {{#each all_websites}}
+    <li>{{safer_email createdBy}}
+        <p>{{url}} </p></li>
+    {{/each}}
+    </ol>
+</template>
+
+<template name="addCommentForm">
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+        <textarea type="text" id="comment_input" class="form-control" placeholder="Enter a comment..."></textarea>
+      
+    </div>
+      <span class="input-group-btn">
+        <button class="btn btn-success js-add-site" type="submit">Add!</button>
+      </span>
+  </div>
+</div>
+</template>
